@@ -1,0 +1,525 @@
+
+
+.header {
+    /*start header-top*/
+    .header-top {
+        background: $cl-banner;
+        color: #858585;
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        align-items: center;
+        padding: $pd-container;
+        @include respond-to(width_1024) {
+            position: relative;
+        }
+        @include respond-to(width_768) {
+            padding: 0 20px;
+        }
+
+        &__left {
+            //flex: 0 0 25%;
+            display: inline;
+            font-size: $fz-14;
+
+            &:nth-child(1) {
+                padding-right: 15px;
+            }
+
+            @include respond-to(width_1024) {
+                display: none;
+
+            }
+
+        }
+
+        &__middle {
+            text-transform: capitalize;
+            font-size: $fz-14;
+            .sale {
+                color: red;
+            }
+            @include respond-to(width_1024) {
+                position: absolute;
+                left: 60px;
+                font-size: $fz-18;
+            }
+            @include respond-to(width_768) {
+                left: 20px;
+                font-size: $fz-18;
+            }
+            @include respond-to(width_600) {
+                left: 5%;
+                right: 5%;
+                font-size: $fz-16;
+                text-align: center;
+            }
+        }
+
+        &__right {
+            flex: 0 0 25%;
+            @include respond-to(width_992) {
+                flex: 0 0 41.66%;
+            }
+            .money {
+                overflow: hidden;
+                width: 80px;
+                border-radius: 10px;
+                position: relative;
+                font-size: 12px;
+                display: block;
+                float: right;
+                font-family: poppins, sans-serif;
+                margin-right: -15px;
+                &::after {
+                    content: "\f107";
+                    font-family: "FontAwesome", sans-serif;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    font-size: 20px;
+                    right: 20px;
+                }
+                @include respond-to(width_768) {
+                    display: none;
+                }
+                &__drop {
+                    display: block;
+                    width: 120%;
+                    margin-right: -10px;
+                    outline: none;
+                    border: none;
+                    background: none;
+                    position: relative;
+                    z-index: 1;
+                    color: #4b4b4b;
+
+                }
+            }
+            .language {
+                overflow: hidden;
+                width: 120px;
+                margin-right: 15px;
+                border-radius: 10px;
+                position: relative;
+                font-size: 12px;
+                display: inline-block;
+                float: right;
+                font-family: poppins, sans-serif;
+
+                &::after {
+                    content: "\f107";
+                    font-family: "FontAwesome", sans-serif;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    font-size: 20px;
+                    right: 5px;
+                }
+
+                @include respond-to(width_768) {
+                    display: none;
+                }
+
+                &__drop {
+                    display: block;
+                    width: 120%;
+                    margin-right: -10px;
+                    outline: none;
+                    border: none;
+                    background: none;
+                    position: relative;
+                    z-index: 1;
+                    color: #4b4b4b;
+
+                    option {
+                        outline: none;
+                    }
+                }
+            }
+            .setting {
+                float: right;
+                display: none;
+                font-size: $fz-16;
+                @include respond-to(width_768) {
+                    display: block;
+                }
+                @include respond-to(width_600) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    /*end__ header-top*/
+    /*start__header-menu*/
+    .header-menu {
+        background: #fff;
+        padding: $pd-container;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+        @include respond-to(width_768) {
+            padding: 0 20px;
+        }
+        &__logo {
+            img {
+                width: 100%;
+                @include respond-to(width_425) {
+                    flex: 0 0 33.33%;
+                }
+            }
+        }
+
+        &__mid {
+            flex: 0 0 50%;
+            align-self: flex-end;
+            text-align: center;
+            @include respond-to(width_1024) {
+                display: none;
+            }
+        }
+
+        &__item {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        &__link {
+            color: #1e1e1e;
+            font-weight: bold;
+            transition: all 0.3s ease-in;
+            font-size: $fz-16;
+            &:hover {
+                color: $cl-action;
+                border-bottom: solid 1px $cl-action;
+            }
+        }
+
+        &__action {
+            color: $cl-action;
+            border-bottom: 1px solid $cl-action;
+        }
+
+        &--wrapper {
+            position: relative;
+            &:hover .header-menu__drop {
+                visibility: visible;
+                transition: all 0.5s ease-in-out;
+            }
+        }
+
+        &__drop {
+            position: absolute;
+            visibility: hidden;
+            width: 300px;
+            top: 25px;
+            left: 30px;
+            background: #fff;
+            text-align: justify;
+            z-index: 1;
+            box-shadow: -5px 0 30px -5px #d9d9d9;
+            li {
+                padding: 10px;
+            }
+            a {
+                color: $cl-black;
+                transition: all 0.3s ease-in;
+                &:hover {
+                    color: #dcaf19;
+                    border-bottom: solid 1px $cl-action;
+                }
+            }
+        }
+
+        &__tools {
+            align-self: flex-end;
+            flex: 0 0 25%;
+            text-align: end;
+            @include clear-fix;
+            @include respond-to(width_992) {
+                flex: 0 0 50%;
+            }
+            a {
+                float:right;
+                padding-right: 20px;
+                font-size: $fz-14;
+                &:nth-child(2){
+                    padding-right: 0;
+                    margin-right: 8px;
+                    position: relative;
+                    &::after {
+                        position: absolute;
+                        content: "0";
+                        width: 20px;
+                        height: 20px;
+                        font-size: $fz-14;
+                        left: 10px;
+                        bottom: -9px;
+                        text-align: center;
+                        background: $cl-item;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        border-radius: 50%;
+                        @include respond-to(width_1024) {
+                            font-size: $fz-18;
+                        }
+                        @include respond-to(width_992) {
+                            font-size: $fz-18;
+                        }
+                    }
+                }
+                @include respond-to(width_768) {
+                    padding-right: 5px;
+                }
+                @include respond-to(width_600) {
+                    display: none;
+                }
+            }
+
+            .menu-icon {
+                cursor: pointer;
+                display: none;
+                float: right;
+                width: 25px;
+                height: 25px;
+                //border: 1px solid $cl-black;
+                @include respond-to(width_1024) {
+                    display: inline-block;
+                    margin-left: 20px;
+                }
+                @include respond-to(width_768) {
+                    margin-left: 10px;
+                }
+                &__hamburger {
+                    position: absolute;
+                    margin: 1px;
+                }
+
+                span {
+                    display: block;
+                    width: 20px;
+                    height: 3px;
+                    background: $cl-action;
+                    margin: 3px 0 0 0;
+                    line-height: 1.8;
+
+                }
+                
+            }
+        }
+    }
+    /*end- header-menu*/
+    //**STAR- HEADER-BANNER
+    .header-banner {
+        position: relative;
+        margin: 0 60px 20px 60px;
+
+        @include respond-to(width_768) {
+            margin: 0 20px;
+        }
+        img {
+            width: 100%;
+        }
+        //**start header-banner__box
+        &__box {
+            position: absolute;
+            top: 25%;
+            left: 10%;
+            text-align: center;
+            @include respond-to(width_1024) {
+                left: 15%;
+                top: 27%;
+            }
+            @include respond-to(width_992) {
+                left: 10%;
+                top: 20%;
+            }
+            @include respond-to(width_768) {
+                left: 8%;
+                top: 15%;
+            }
+            @include respond-to(width_600) {
+                left: 5%;
+                top: 13%;
+            }
+        }
+
+        &__title {
+            margin-bottom: 20px;
+            font-size: $fz-22;
+            letter-spacing: 5px;
+            font-weight: 900;
+            @include respond-to(width_1024) {
+                font-size: $fz-20;
+            }
+            @include respond-to(width_600) {
+                font-size: $fz-18;
+                margin-bottom: 15px;
+            }
+            @include respond-to(width_425) {
+                font-size: $fz-16;
+            }
+
+        }
+
+        &__btn {
+            font-size: $fz-36;
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #fff;
+            font-weight: 900;
+            background: #dec18c;
+            padding: 20px 30px;
+            @include respond-to(width_1024) {
+                font-size: $fz-22;
+            }
+            @include respond-to(width_600) {
+                font-size: $fz-20;
+                padding: 10px 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        &__slogan {
+            font-size: $fz-18;
+            margin-bottom: 55px;
+            letter-spacing: 15px;
+            font-weight: bold;
+            @include respond-to(width_1024) {
+                letter-spacing: 5px;
+                font-size: $fz-18;
+                margin-bottom: 30px;
+            }
+            @include respond-to(width_600) {
+                letter-spacing: 3px;
+                font-size: $fz-14;
+                margin-bottom: 30px;
+            }
+            @include respond-to(width_425) {
+                letter-spacing: 3px;
+                font-size: $fz-12;
+                margin-bottom: 10px;
+            }
+        }
+
+        &__link {
+            font-size: $fz-14;
+            color: $cl-black;
+            font-weight: bold;
+            border-bottom: solid 1px #111;
+            //@include respond-to(width_600) {
+            //    font-size: $fz-12;
+            //}
+
+        }
+
+        // END HEADER-BANNER__BOX
+        //*** START HEADER-BANNER__NAV
+        &__nav {
+            position: absolute;
+            bottom: 0;
+            padding-left: 30px;
+            margin-bottom: 20px;
+            @include respond-to(width_600) {
+                  padding-left: 15px;
+                  margin-bottom: 10px;
+              }
+            @include respond-to(width_425) {
+                padding-left: 10px;
+                margin-bottom: 5px;
+            }
+        }
+
+        &__item {
+            display: inline;
+            font-size: $fz-12;
+            span {
+                padding: 0 20px;
+                @include respond-to(width_600) {
+                    padding: 0 10px;
+                }
+                @include respond-to(width_425) {
+                    padding: 0 5px;
+                }
+            }
+        }
+
+        &__item a {
+            color: $cl-black;
+        }
+    }
+
+    /*end HEADER-BANNER*/
+    /*START HEADER-PRODUCT*/
+    .header-product {
+        margin: 0 60px 120px 60px;
+        display: flex;
+        @include respond-to(width_992) {
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        &__col {
+            flex: 0 0 33.3333%;
+            padding-right: 15px;
+            &:last-child {
+                padding-right: 0;
+            }
+            @include respond-to(width_992) {
+                flex: 0 0 80%;
+                margin: 0 auto;
+                padding: 15px 0;
+
+            }
+        }
+
+        &__item {
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            position: relative;
+            height: auto;
+            width: 100%;
+        }
+
+        &__content {
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            @include respond-to(width_992) {
+                left: 15%;
+            }
+        }
+
+        &__btn {
+            display: inline-block;
+            color: $cl-black;
+            font-size: $fz-22;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        &__slogan {
+            font-size: $fz-14;
+            letter-spacing: 2px;
+            margin-bottom: 35px;
+            font-weight: bold;
+            @include respond-to(width_1024) {
+                font-size: $fz-12;
+            }
+        }
+
+        &__link {
+            color: $cl-black;
+            font-size: $fz-12;
+            letter-spacing: 2px;
+            border-bottom: 1px solid $cl-black;
+            font-weight: bold;
+
+        }
+    }
+
+    /*END HEADER-PRODUCT*/
+}

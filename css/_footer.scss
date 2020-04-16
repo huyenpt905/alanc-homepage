@@ -1,0 +1,219 @@
+/*star footer*/
+.footer__main {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    color: #4b4b4b;
+    padding: 0 60px;
+    @include respond-to(width_768) {
+        padding: 0 20px;
+    }
+    @include respond-to(width_600) {
+
+    }
+    .main__item {
+
+        @include respond-to(width_425) {
+            margin-bottom: 15px;
+        }
+        h3, img {
+            margin-bottom: 30px;
+            @include respond-to(width_425) {
+                margin-bottom: 15px;
+            }
+        }
+        h3 {
+            font-size: $fz-16;
+            font-family: Montserrat, sans-serif;
+        }
+        p {
+            font-family: poppins, sans-serif;
+            font-size: $fz-14;
+            line-height: 2.2;
+        }
+        .item__box{
+            display: flex;
+            align-items: baseline;
+
+            .item__info {
+                padding-left: 20px;
+                margin-bottom: 10px;
+            }
+
+            i {
+                color: #cccccc;
+                font-size: $fz-14;
+            }
+        }
+        .foot__email{
+            position: relative;
+            margin-bottom: 30px;
+            i {
+                position: absolute;
+                right: 10px;
+                top: 12px;
+                color: #b4b4b4;
+                font-size: $fz-18;
+            }
+            .foot__input {
+                display: block;
+                width: 100%;
+                border: 2px solid #b6b4b4;
+                background: #f6f6f6;
+                padding: 10px;
+                transition: all .3s;
+                font-family: poppins, sans-serif;
+            }
+        }
+
+        .foot__connect {
+            i{
+                padding-right: 20px;
+                font-size: $fz-22;
+                &:first-child {
+                    color: $cl-item;
+                }
+                @include respond-to(width_992) {
+                    font-size: $fz-36;
+                    padding-right: 30px;
+                }
+            }
+        }
+
+    }
+    .main__item-5 {
+        flex: 0 0 25%;
+
+        @include respond-to(width_992) {
+            flex: 0 0 55%;
+            order: 2;
+            margin-bottom: 40px;
+        }
+
+        @include respond-to(width_600) {
+            order: 5;
+            flex: 0 0 100%;
+            text-align: center;
+            border-top: 1px solid $cl-banner;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+    }
+
+    .main__item-1 {
+        @include respond-to(width_992) {
+            flex: 0 0 45%;
+            order: 1;
+            margin-bottom: 40px;
+        }
+        @include respond-to(width_600) {
+            flex: 0 0 100%;
+            text-align: center;
+            border-bottom: 1px solid $cl-banner;
+            .item__box {
+                display: block;
+                i {
+                    font-size: $fz-26;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    .main__item-2 {
+        @include respond-to(width_992) {
+            order: 3;
+        }
+        @include respond-to(width_600) {
+            flex: 0 0 25%;
+            order: 2;
+            padding-left: 60px;
+        }
+        @include respond-to(width_425) {
+            flex: 0 0 100%;
+            text-align: center;
+        }
+    }
+    .main__item-3 {
+        @include respond-to(width_992) {
+            order: 4;
+        }
+        @include respond-to(width_600) {
+            flex: 0 0 25%;
+            order: 3;
+            padding-left: 60px;
+        }
+    }
+    .main__item-4 {
+        @include respond-to(width_992) {
+            order: 5;
+        }
+        @include respond-to(width_600) {
+            order: 4;
+            flex: 0 0 25%;
+            padding-left: 60px;
+        }
+    }
+}
+
+.footer__foot{
+    hr {
+        color: $cl-banner;
+        margin-bottom: 35px;
+        @include respond-to(width_768) {
+            margin-bottom: 20px;
+        }
+    }
+    padding: 0 60px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    @include clear-fix;
+    @include respond-to(width_768) {
+        padding: 0 20px;
+        margin-top: 20px;
+    }
+    .foot__copy {
+        float: left;
+        width: 50%;
+        font-family: poppins, sans-serif;
+        font-size: $fz-16;
+        color: #4b4b4b;
+        span {
+            color: $cl-action;
+        }
+        @include respond-to(width_992) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .foot__img {
+        float: right;
+        width: 50%;
+        text-align: end;
+        @include respond-to(width_992) {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img {
+            display: inline-block;
+            width: 60px;
+            height: 40px;
+            margin-left: 30px;
+            @include respond-to(width_768) {
+                margin-left: 15px;
+                &:last-child {
+                    display: none;
+                }
+            }
+            @include respond-to(width_425) {
+                &:nth-child(5) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
